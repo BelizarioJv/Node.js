@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo ao Projeto MVC</h1>
+    <p>Este é um exemplo de aplicação utilizando o padrão MVC.</p>
+    <h2>Posts Recomendados</h2>
+    <ul>
+      <% posts.forEach(post => { %>
+        <li>
+          <article class="post">
+          <a href="/posts/<%= post.id %>" class="post-title">
+            <h3><%= post.title %></h3>
+          </a>
+          </article>
+        </li>
+      <% }) %>
+  </div>
+</body>
+</html>
