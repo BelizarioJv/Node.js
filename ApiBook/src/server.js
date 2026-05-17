@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { authRouter } from "./router/authRouter.js";
-import { apiRouter } from "./router/booksRouter.js";
+import { apiRouter } from "./router/apiRouter.js";
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 
 const app = express();

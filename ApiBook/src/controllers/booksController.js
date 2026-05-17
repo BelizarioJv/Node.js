@@ -11,8 +11,7 @@ export const booksController = {
   show: (req, res) => {
     const { id } = req.params;
     const book = booksModel.getBookById(id);
-    if (!book)
-      return res.status(404).json({ message: "Livro não encontrado!" });
+    if (!book) next(new HttpError(404, "Livro não encontrado!"));
     res.json(book);
   },
 
@@ -25,7 +24,7 @@ export const booksController = {
       typeof author !== "string" ||
       typeof quantityAvailable !== "number"
     ) {
-      return res.status(400).json({ message: "Campos inválidos." });
+      return next(new HttpError(404, "Campos invalidos"));
     }
 
     const newBook = booksModel.createBook(title, author, quantityAvailable);
